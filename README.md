@@ -13,7 +13,7 @@ fvm flutter pub get
 ### 自動生成ファイルを作成する場合
 
 ```terminal
-fvm dart run build-runner build
+fvm dart run build_runner build
 ```
 
 ## 参考資料
