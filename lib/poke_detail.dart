@@ -35,14 +35,21 @@ class DetailPage extends StatelessWidget {
               ],
             ),
             const Text(
-              'ピカチュウ',
+              'Pikachu',
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Chip(
-              label: Text('電気'),
+            Chip(
+              label: Text(
+                'Electric',
+                style: TextStyle(
+                  color: Colors.yellow.computeLuminance() > 0.5
+                      ? Colors.black
+                      : Colors.white,
+                ),
+              ),
               backgroundColor: Colors.yellow,
             ),
           ],

@@ -8,6 +8,7 @@ A new Flutter project.
 - [ ] step1: 作成されたファイルの不要なコメントを削除し、`Hello, World!`する
 - [ ] step2: ピカチュウを表示する
 - [ ] step3: Navigator v1について学ぶ
+- [ ] step4: ダークモードに対応する
 
 ## command
 
