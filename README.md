@@ -9,6 +9,7 @@ A new Flutter project.
 - [ ] step2: ピカチュウを表示する
 - [ ] step3: Navigator v1について学ぶ
 - [ ] step4: ダークモードに対応する
+- [ ] step5: BottomNavigationBarを実装し、画面切り替えができるようにする
 
 ## command
 
