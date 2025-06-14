@@ -2,6 +2,12 @@
 
 A new Flutter project.
 
+## ToDo
+
+- [ ] Flutterプロジェクトを`web`プロジェクト形式で立ち上げ
+- [ ] 作成されたファイルの不要なコメントを削除し、`Hello, World!`する
+- [ ] ピカチュウを表示する
+
 ## command
 
 ### パッケージを取得する場合
