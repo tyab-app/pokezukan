@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../settings/settings.dart';
+import '../settings_page/settings.dart';
 import 'application/poke_list_item.dart';
 
 class TopPage extends StatefulWidget {

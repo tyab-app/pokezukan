@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../shared/enum/theme_mode.dart';
+import '../shared/enum/provider/theme_mode_notifier.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -10,40 +11,31 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  ThemeMode _themeMode = ThemeMode.system;
-
-  @override
-  void initState() {
-    super.initState();
-    loadThemeMode().then(
-      (val) => setState(
-        () => _themeMode = val,
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return ListView(children: [
-      ListTile(
-        leading: Icon(Icons.lightbulb),
-        title: Text('Dark/Light Mode'),
-        trailing: Text((_themeMode == ThemeMode.system)
-            ? 'System'
-            : (_themeMode == ThemeMode.dark)
-                ? 'Dark'
-                : 'Light'),
-        onTap: () async {
-          var ret = await Navigator.of(context).push<ThemeMode>(
-            MaterialPageRoute(
-              builder: (context) => ThemeModeSelectionPage(mode: _themeMode),
-            ),
-          );
-          setState(() => _themeMode = ret!);
-          await saveThemeModel(_themeMode);
-        },
-      ),
-    ]);
+    return Consumer<ThemeModeNotifier>(
+      builder: (context, mode, child) => ListView(children: [
+        ListTile(
+          leading: Icon(Icons.lightbulb),
+          title: Text('Dark/Light Mode'),
+          trailing: Text((mode.mode == ThemeMode.system)
+              ? 'System'
+              : (mode.mode == ThemeMode.dark)
+                  ? 'Dark'
+                  : 'Light'),
+          onTap: () async {
+            var ret = await Navigator.of(context).push<ThemeMode>(
+              MaterialPageRoute(
+                builder: (context) => ThemeModeSelectionPage(mode: mode.mode),
+              ),
+            );
+            if (ret != null) {
+              mode.update(ret);
+            }
+          },
+        ),
+      ]),
+    );
   }
 }
 
