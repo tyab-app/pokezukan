@@ -10,6 +10,7 @@ A new Flutter project.
 - [ ] step3: Navigator v1について学ぶ
 - [ ] step4: ダークモードに対応する
 - [ ] step5: BottomNavigationBarを実装し、画面切り替えができるようにする
+- [ ] step6: テーマモードの設定を保存する
 
 ## command
 
